@@ -7,36 +7,41 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
+import { useState } from "react";
+
 const Cards = () => {
+  const [favoriteIconColor, setFavoriteIconColor] = useState(undefined);
+  const favoriteIconColorF = () => {
+    favoriteIconColor === "red"
+      ? setFavoriteIconColor(undefined)
+      : setFavoriteIconColor("red");
+  };
   return (
     <>
-      <Card className="m" sx={{ maxWidth: 250, maxHeight: 400 }}>
-        <CardHeader
-          action={
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-          }
-        />
+      <Card
+        className="m-3 position-relative d-inline-block"
+        sx={{ maxWidth: 250, minWidth: 200, maxHeight: 400 }}
+      >
+        <IconButton
+          aria-label="add to favorites"
+          className="position-absolute top-0 end-0"
+        >
+          <FavoriteIcon
+            style={{ color: favoriteIconColor }}
+            onClick={favoriteIconColorF}
+          />
+        </IconButton>
         <CardMedia
           component="img"
           height="194"
-          image="/static/images/cards/paella.jpg"
+          image="https://aquascapinglove.com/wp-content/uploads/2019/11/what-is-aquascaping-learn-aquascaping-luis-cardoso.jpg"
           alt="Paella dish"
         />
-
         <CardContent>
           <Typography variant="body2" color="text.secondary">
-            This impressive paella is a perfect party dish and a fun meal to
-            cook together with your guests. Add 1 cup of frozen peas along with
-            the mussels, if you like.
+            This impressive paella
           </Typography>
         </CardContent>
-        <CardActions disableSpacing>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
-        </CardActions>
       </Card>
     </>
   );

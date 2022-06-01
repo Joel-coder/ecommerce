@@ -46,10 +46,13 @@ export default function LandingPage() {
 
   return (
     <>
-      <main className="d-flex-row-center transparent-border">
+      <main className="d-flex-row-center m-2">
         <section className="w-100 me-1">
           <div className="bg-color-yellow wh-banner m-center border-round"></div>
-          <div className="border-round d-flex-row-center  mt-1">
+          <div className="border-round mt-1 w-100">
+            <Cards />
+            <Cards />
+            <Cards />
             <Cards />
             <Cards />
             <Cards />

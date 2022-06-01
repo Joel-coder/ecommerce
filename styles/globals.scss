@@ -1,0 +1,55 @@
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+.bg-color-yellow {
+  background-color: red;
+}
+
+.m-center {
+  margin: auto;
+}
+.border-round {
+  border: 2px solid red;
+  border-radius: 7px;
+}
+.w-100 {
+width: 100%;
+ 
+}
+.wh-container {
+  height: 200px;
+
+}
+.wh-banner {
+  min-height: 200px;
+}
+.d-flex-row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.transparent-border {
+  border-style: dashed;
+  border-color: transparent;
+}
+.mt-1 {
+  margin-top: 10px;
+}
+.me-1 {
+  margin-right: 15px;
+}

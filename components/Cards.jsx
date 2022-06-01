@@ -10,8 +10,7 @@ import ShareIcon from "@mui/icons-material/Share";
 const Cards = () => {
   return (
     <>
-      {" "}
-      <Card sx={{ maxWidth: 250, maxHeight: 400 }}>
+      <Card className="m" sx={{ maxWidth: 250, maxHeight: 400 }}>
         <CardHeader
           action={
             <IconButton aria-label="add to favorites">

@@ -24,7 +24,7 @@ a {
   margin: auto;
 }
 .border-round {
-  border: 2px solid red;
+
   border-radius: 7px;
 }
 .w-100 {
@@ -52,4 +52,13 @@ width: 100%;
 }
 .me-1 {
   margin-right: 15px;
+}
+.m {
+  margin: 5px;
+}
+.left-align 
+{
+  float: right;
+  display: inline;
+  width: 49%;
 }

@@ -1,4 +1,5 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { styled } from "@mui/material/styles";
 import { GlobalContext } from "../../store/globalStateProvider"; // global state
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
@@ -7,6 +8,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations"; //
 import { useRouter } from "next/router"; // i18n
 import Link from "next/link"; // nextjs
 import API from "../../api";
+import Cards from "../../components/Cards";
 
 const useStyles = makeStyles((theme) => ({
   // set styles through classes
@@ -18,11 +20,25 @@ const useStyles = makeStyles((theme) => ({
     margin: 20,
   },
 }));
+const ExpandMore = styled((props) => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
+  marginLeft: "auto",
+  transition: theme.transitions.create("transform", {
+    duration: theme.transitions.duration.shortest,
+  }),
+}));
 
 export default function LandingPage() {
   const classes = useStyles();
   const { exampleDispatch, exampleState, authState } =
     useContext(GlobalContext);
+  const [expanded, setExpanded] = useState(false);
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
 
   const router = useRouter();
   const { locale } = router;
@@ -48,9 +64,12 @@ export default function LandingPage() {
       <section className="d-flex-row-center transparent-border">
         <section className="w-100 me-1">
           <div className="bg-color-yellow wh-banner m-center border-round"></div>
-          <div className="bg-color-yellow  wh-container border-round mt-1"></div>
+          <div className="bg-color-yellow  border-round mt-1">
+            {" "}
+            <Cards />
+          </div>
         </section>
-        <section className="bg-color-yellow border-round">{"klk"}</section>
+        <section className="bg-color-yellow border-round"></section>
       </section>
     </>
   );

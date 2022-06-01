@@ -61,7 +61,7 @@ export default function LandingPage() {
 
   return (
     <>
-      <section className="d-flex-row-center transparent-border">
+      <main className="d-flex-row-center transparent-border">
         <section className="w-100 me-1">
           <div className="bg-color-yellow wh-banner m-center border-round"></div>
           <div className="bg-color-yellow  border-round mt-1">
@@ -70,7 +70,7 @@ export default function LandingPage() {
           </div>
         </section>
         <section className="bg-color-yellow border-round"></section>
-      </section>
+      </main>
     </>
   );
 }

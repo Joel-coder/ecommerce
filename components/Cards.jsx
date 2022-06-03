@@ -19,17 +19,15 @@ const Cards = () => {
   return (
     <>
       <Card
-        className="m-3 position-relative d-inline-block"
+        className="m-3 w-100 position-relative d-inline-block"
         sx={{ maxWidth: 250, minWidth: 200, maxHeight: 400 }}
       >
         <IconButton
           aria-label="add to favorites"
           className="position-absolute top-0 end-0"
+          onClick={favoriteIconColorF}
         >
-          <FavoriteIcon
-            style={{ color: favoriteIconColor }}
-            onClick={favoriteIconColorF}
-          />
+          <FavoriteIcon style={{ color: favoriteIconColor }} />
         </IconButton>
         <CardMedia
           component="img"

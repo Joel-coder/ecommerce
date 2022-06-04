@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import { styled } from "@mui/material/styles";
 import { GlobalContext } from "../../store/globalStateProvider"; // global state
 import { makeStyles } from "@material-ui/core";
@@ -12,14 +12,14 @@ import Cards from "../../components/Cards";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-
+import Container from "@mui/material/Container";
 const useStyles = makeStyles((theme) => ({
   // set styles through classes
   landingPageContainer: {
     backgroundColor: theme.palette.primary.main,
   },
   button: {
-    backgroundColor: "red",
+    backgroundColor: "#c3c3c3",
     margin: 20,
   },
   navBar: {
@@ -32,17 +32,25 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       borderBottom: "1px solid pink",
     },
+    "&:focus": {
+      color: "red",
+    },
+  },
+  sideBarContainer: {
+    minWidth: "250px",
+    backgroundColor: "#c3c3c3",
+    marginLeft: "5px",
   },
 }));
 
 export default function LandingPage() {
   const classes = useStyles();
+  const [selected, setSelected] = useState(null);
   const { exampleDispatch, exampleState, authState } =
     useContext(GlobalContext);
   const router = useRouter();
   const { locale } = router;
   const { t } = useTranslation("landingPage");
-
   useEffect(() => {
     exampleDispatch({ type: "SET_DISPLAY_TEXT", payload: "Updated Value" }); // dispatcher for updating global state
   }, []);
@@ -62,7 +70,7 @@ export default function LandingPage() {
     <>
       <main className="d-flex-row-center m-2">
         <section className="w-100 ">
-          <div className="bg-color-yellow wh-banner m-center border-round"></div>
+          <div className="bg-color-yellow wh-banner m-center border-round mb-5"></div>
           <AppBar position="static">
             <Toolbar className={classes.navBar} variant="dense">
               <Typography
@@ -115,7 +123,7 @@ export default function LandingPage() {
               </Typography>
             </Toolbar>
           </AppBar>
-          <div className="border-round ">
+          <div className="border-round mx-auto">
             <Cards />
             <Cards />
             <Cards />
@@ -124,9 +132,9 @@ export default function LandingPage() {
             <Cards />
           </div>
         </section>
-        <section className="bg-color-yellow border-round ms-1">
+        <aside className={classes.sideBarContainer}>
           <div></div>
-        </section>
+        </aside>
       </main>
     </>
   );

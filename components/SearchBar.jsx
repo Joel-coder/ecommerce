@@ -18,9 +18,10 @@ const SearchBar = () => {
   return (
     <>
       <FormControl
-        sx={{ m: 1, width: "500px" }}
+        sx={{ m: 1, maxWidth: "500px" }}
         variant="outlined"
         size="small"
+        fullWidth={true}
       >
         <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
         <OutlinedInput

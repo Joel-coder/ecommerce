@@ -14,6 +14,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
 const useStyles = makeStyles((theme) => ({
   // set styles through classes
   landingPageContainer: {
@@ -73,7 +74,6 @@ export default function LandingPage() {
         <section className="w-100 ">
           <SearchBar />
           <div className="bg-color-yellow wh-banner m-center border-round mb-5"></div>
-
           <AppBar position="static">
             <Toolbar className={classes.navBar} variant="dense">
               <Typography
@@ -126,14 +126,16 @@ export default function LandingPage() {
               </Typography>
             </Toolbar>
           </AppBar>
-          <div className="border-round mx-auto">
+          <Box
+            sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+          >
             <Cards />
             <Cards />
             <Cards />
             <Cards />
             <Cards />
             <Cards />
-          </div>
+          </Box>
         </section>
         <aside className={classes.sideBarContainer}>
           <div></div>

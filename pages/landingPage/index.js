@@ -9,6 +9,7 @@ import { useRouter } from "next/router"; // i18n
 import Link from "next/link"; // nextjs
 import API from "../../api";
 import Cards from "../../components/Cards";
+import SearchBar from "../../components/SearchBar";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -70,7 +71,9 @@ export default function LandingPage() {
     <>
       <main className="d-flex-row-center m-2">
         <section className="w-100 ">
+          <SearchBar />
           <div className="bg-color-yellow wh-banner m-center border-round mb-5"></div>
+
           <AppBar position="static">
             <Toolbar className={classes.navBar} variant="dense">
               <Typography

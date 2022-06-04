@@ -17,7 +17,11 @@ const useStyles = makeStyles((theme) => ({
 const SearchBar = () => {
   return (
     <>
-      <FormControl sx={{ m: 1, width: "500px" }} variant="outlined">
+      <FormControl
+        sx={{ m: 1, width: "500px" }}
+        variant="outlined"
+        size="small"
+      >
         <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
         <OutlinedInput
           id="outlined-adornment-password"

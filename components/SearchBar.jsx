@@ -18,7 +18,7 @@ const SearchBar = () => {
   return (
     <>
       <FormControl
-        sx={{ m: 1, maxWidth: "500px" }}
+        sx={{ m: 1, maxWidth: "400px" }}
         variant="outlined"
         size="small"
         fullWidth={true}
